@@ -20,5 +20,5 @@ if [ -z "${PAYLOAD}" ]; then
         exit 1
 fi
 
-curl -k -X POST -H "Authorization: Bearer ${FGT_SECRET}" -d "${PAYLOAD}" ${FGT_HOST}/api/v2/monitor/vpn-certificate/local/import
+curl -k -X POST -H "Authorization: Bearer ${FGT_SECRET}" -d "${PAYLOAD}" ${FGT_HOST}/api/v2/monitor/vpn-certificate/local/import && \
 curl -k -X PUT -H "Authorization: Bearer ${FGT_SECRET}" -d "{\"servercert\": \"${CERTNAME}\"}" ${FGT_HOST}/api/v2/cmdb/vpn.ssl/settings
